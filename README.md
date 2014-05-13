@@ -1131,22 +1131,53 @@ ffmpeg.ffprobe('/path/to/file.avi', function(err, data) {
 });
 ```
 
-## Contributors
-
-* [enobrev](http://github.com/enobrev)
-* [njoyard](http://github.com/njoyard)
-* [sadikzzz](http://github.com/sadikzzz)
-* [smremde](http://github.com/smremde)
-* [spruce](http://github.com/spruce)
-* [tagedieb](http://github.com/tagedieb)
-* [tommadema](http://github.com/tommadema)
-* [Weltschmerz](http://github.com/Weltschmerz)
-
 ## Contributing
 
 Contributions in any form are highly encouraged and welcome! Be it new or improved presets, optimized streaming code or just some cleanup. So start forking!
 
-## Tests
+### Code contributions
+
+If you want to add new features or change the API, please submit an issue first to make sure no one else is already working on the same thing and discuss the implementation and API details with maintainers and users.  When everything is settled down, you can submit a pull request.
+
+When fixing bugs, you can directly submit a pull request.
+
+Make sure to add tests for your features and bugfixes and update the documentation (see below) before submitting your code!
+
+### Documentation contributions
+
+You can directly submit pull requests for documentation changes.  Make sure to regenerate the documentation before submitting (see below).
+
+### Updating the documentation
+
+When contributing API changes (new methods for example), be sure to update the README file and JSDoc comments in the code.  fluent-ffmpeg comes with a plugin that enables two additional JSDoc tags:
+
+* `@aliases`: document method aliases
+
+```js
+/**
+ * ...
+ * @method FfmpegCommand#myMethod
+ * @aliases myMethodAlias,myOtherMethodAlias
+ */
+```
+
+* `@category`: set method category
+
+```js
+/**
+ * ...
+ * @category Audio
+ */
+```
+
+You can regenerate the JSDoc documentation by running the following command:
+
+```sh
+$ make doc
+```
+
+### Running tests
+
 To run unit tests, first make sure you installed npm dependencies (run `npm install`).
 
 ```sh
@@ -1160,6 +1191,17 @@ $ make test-cov
 ```
 
 Make sure your ffmpeg installation is up-to-date to prevent strange assertion errors because of missing codecs/bugfixes.
+
+## Main contributors
+
+* [enobrev](http://github.com/enobrev)
+* [njoyard](http://github.com/njoyard)
+* [sadikzzz](http://github.com/sadikzzz)
+* [smremde](http://github.com/smremde)
+* [spruce](http://github.com/spruce)
+* [tagedieb](http://github.com/tagedieb)
+* [tommadema](http://github.com/tommadema)
+* [Weltschmerz](http://github.com/Weltschmerz)
 
 ## License
 
