@@ -1061,6 +1061,76 @@ The returned object for filters looks like:
 * `output` tells the output type this filter generates, one of "audio", "video" or "none".  When "none", the filter has no output (sink only)
 * `multipleInputs` tells whether the filter can generate multiple outputs
 
+## Migrating from fluent-ffmpeg 1.x
+
+fluent-ffmpeg 2.0 is mostly compatible with previous versions, as all previous method names have been kept as aliases.  The paragraphs below explain how to get around the few remaining incompatibilities.
+
+### Callbacks and event handling
+
+Passing callback to the `saveToFile()`, `writeToStream()`, `takeScreenshots()` and `mergeToFile()` methods has been deprecated for some time now, and is now unsupported from version 2.0 onwards.  You must use event handlers instead.  
+
+```js
+// 1.x code
+command
+  .saveToFile('/path/to/output.avi', function(err) {
+    if (err) {
+      console.log('An error occurred: ' + err.message);
+    } else {
+      console.log('Processing finished');
+    }
+  });
+
+// 2.x code
+command
+  .on('error', function(err) {
+    console.log('An error occurred: ' + err.message);
+  })
+  .on('end', function() {
+    console.log('Processing finished');
+  })
+  .saveToFile('/path/to/output.avi');
+```
+
+The same goes for the `onProgress` and `onCodecData` methods.
+
+```js
+// 1.x code
+command
+  .onProgress(function(progress) { ... })
+  .onCodecData(function(data) { ... });
+
+// 2.x code
+command
+  .on('progress', function(progress) { ... })
+  .on('codecData', function(data) { ... };
+```
+
+Note that you should always set a handler for the `error` event.  If an error happens without an `error` handler, nodejs will terminate your program.
+
+See the [events documentation](#setting-event-handlers) above for more information.
+
+### Metadata and Calculate submodules
+
+Both the Metadata and Calculate submodules have been removed, as they were pretty unreliable.
+
+The Calculate submodule has no replacement, as fluent-ffmpeg does not do size calculations anymore (we use ffmpeg filters instead).
+
+The Metadata submodule is replaced by the `ffprobe()` method which is much more reliable.  Have a look at [its documentation](#reading-video-metadata) above for more information.
+
+```js
+var ffmpeg = require('fluent-ffmpeg');
+
+ffmpeg('/path/to/file.avi').ffprobe(function(err, data) {
+  console.dir(data.streams);
+  console.dir(data.format);
+});
+
+ffmpeg.ffprobe('/path/to/file.avi', function(err, data) {
+  console.dir(data.streams);
+  console.dir(data.format);
+});
+```
+
 ## Contributors
 
 * [enobrev](http://github.com/enobrev)
