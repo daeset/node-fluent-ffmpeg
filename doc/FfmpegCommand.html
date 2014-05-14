@@ -2094,15 +2094,6 @@ addInput method).</p>
     
     <div class="description">
         <p>Query ffmpeg for available codecs</p>
-<p>Calls 'callback' with a codecs object as its second argument. This
-object has keys for every available codec, and values are object
-with codec data:</p>
-<ul>
-<li>'description': codec description</li>
-<li>'canEncode': bool, whether the codec can encode streams</li>
-<li>'canDecode': bool, whether the codec can decode streams</li>
-</ul>
-<p>Depending on the ffmpeg version, more keys can be available.</p>
     </div>
     
 
@@ -2142,7 +2133,7 @@ with codec data:</p>
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type"><a href="FfmpegCommand.html#codecCallback">FfmpegCommand~codecCallback</a></span>
 
 
             
@@ -2152,7 +2143,7 @@ with codec data:</p>
 
             
 
-            <td class="description last"><p>callback with signature (err, codecs)</p></td>
+            <td class="description last"><p>callback function</p></td>
         </tr>
 
     
@@ -2183,7 +2174,7 @@ with codec data:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line284">line 284</a>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -2230,16 +2221,6 @@ with codec data:</p>
     
     <div class="description">
         <p>Query ffmpeg for available filters</p>
-<p>Calls 'callback' with a filters object as its second argument. This
-object has keys for every available filter, and values are object
-with filter data:</p>
-<ul>
-<li>'description': filter description</li>
-<li>'input': input type ('audio', 'video' or 'none')</li>
-<li>'multipleInputs': bool, whether the filter supports multiple inputs</li>
-<li>'output': output type ('audio', 'video' or 'none')</li>
-<li>'multipleOutputs': bool, whether the filter supports multiple outputs</li>
-</ul>
     </div>
     
 
@@ -2279,7 +2260,7 @@ with filter data:</p>
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type"><a href="FfmpegCommand.html#filterCallback">FfmpegCommand~filterCallback</a></span>
 
 
             
@@ -2289,7 +2270,7 @@ with filter data:</p>
 
             
 
-            <td class="description last"><p>callback with signature (err, filters)</p></td>
+            <td class="description last"><p>callback function</p></td>
         </tr>
 
     
@@ -2320,7 +2301,7 @@ with filter data:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line233">line 233</a>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line247">line 247</a>
     </li></ul></dd>
     
 
@@ -2367,14 +2348,6 @@ with filter data:</p>
     
     <div class="description">
         <p>Query ffmpeg for available formats</p>
-<p>Calls 'callback' with a formats object as its second argument. This
-object has keys for every available format, and values are object
-with format data:</p>
-<ul>
-<li>'description': format description</li>
-<li>'canMux': bool, whether the format can mux streams into an output file</li>
-<li>'canDemux': bool, whether the format can demux streams from an input file</li>
-</ul>
     </div>
     
 
@@ -2414,7 +2387,7 @@ with format data:</p>
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type"><a href="FfmpegCommand.html#formatCallback">FfmpegCommand~formatCallback</a></span>
 
 
             
@@ -2424,7 +2397,7 @@ with format data:</p>
 
             
 
-            <td class="description last"><p>callback with signature (err, formats)</p></td>
+            <td class="description last"><p>callback function</p></td>
         </tr>
 
     
@@ -2455,7 +2428,7 @@ with format data:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line378">line 378</a>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line399">line 399</a>
     </li></ul></dd>
     
 
@@ -4713,74 +4686,6 @@ by subsequent input-related methods.</p>
         
             
 <dt>
-    <h4 class="name" id="inputFPS"><span class="type-signature"></span>inputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Alias for <a href="#inputFps">FfmpegCommand#inputFps</a>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
     <h4 class="name" id="inputFps"><span class="type-signature"></span>inputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
@@ -4936,6 +4841,74 @@ by subsequent input-related methods.</p>
             
 <dt>
     <h4 class="name" id="inputFps"><span class="type-signature"></span>inputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Alias for <a href="#inputFps">FfmpegCommand#inputFps</a>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="inputFPS"><span class="type-signature"></span>inputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -5554,7 +5527,7 @@ by subsequent input-related methods.</p>
         
             
 <dt>
-    <h4 class="name" id="withFpsInput"><span class="type-signature"></span>withFpsInput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withFPSInput"><span class="type-signature"></span>withFPSInput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -5622,7 +5595,7 @@ by subsequent input-related methods.</p>
         
             
 <dt>
-    <h4 class="name" id="withFPSInput"><span class="type-signature"></span>withFPSInput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withFpsInput"><span class="type-signature"></span>withFpsInput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -5758,7 +5731,7 @@ by subsequent input-related methods.</p>
         
             
 <dt>
-    <h4 class="name" id="withInputFPS"><span class="type-signature"></span>withInputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withInputFps"><span class="type-signature"></span>withInputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -5826,7 +5799,7 @@ by subsequent input-related methods.</p>
         
             
 <dt>
-    <h4 class="name" id="withInputFps"><span class="type-signature"></span>withInputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withInputFPS"><span class="type-signature"></span>withInputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -5907,9 +5880,6 @@ by subsequent input-related methods.</p>
     
     <div class="description">
         <p>Run ffprobe on last specified input</p>
-<p>Callback will receive an object as its second argument.  This object
-has the same format as what the following command returns:</p>
-<p>  ffprobe -print_format json -show_streams -show_format INPUTFILE</p>
     </div>
     
 
@@ -5949,7 +5919,7 @@ has the same format as what the following command returns:</p>
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type"><a href="FfmpegCommand.html#ffprobeCallback">FfmpegCommand~ffprobeCallback</a></span>
 
 
             
@@ -5959,7 +5929,7 @@ has the same format as what the following command returns:</p>
 
             
 
-            <td class="description last"><p>callback with signature (err, ffprobeData)</p></td>
+            <td class="description last"><p>callback function</p></td>
         </tr>
 
     
@@ -5990,7 +5960,7 @@ has the same format as what the following command returns:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ffprobe.js.html">ffprobe.js</a>, <a href="ffprobe.js.html#line12">line 12</a>
+        <a href="ffprobe.js.html">ffprobe.js</a>, <a href="ffprobe.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -7395,7 +7365,7 @@ command.save('/path/to/output-original-size.mp4');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line946">line 946</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line957">line 957</a>
     </li></ul></dd>
     
 
@@ -7527,7 +7497,7 @@ command.save('/path/to/output-original-size.mp4');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line529">line 529</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line540">line 540</a>
     </li></ul></dd>
     
 
@@ -7708,7 +7678,7 @@ command.save('/path/to/output-original-size.mp4');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line493">line 493</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line504">line 504</a>
     </li></ul></dd>
     
 
@@ -7872,7 +7842,7 @@ command.save('/path/to/output-original-size.mp4');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line899">line 899</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line910">line 910</a>
     </li></ul></dd>
     
 
@@ -8003,7 +7973,7 @@ command.save('/path/to/output-original-size.mp4');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line477">line 477</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line488">line 488</a>
     </li></ul></dd>
     
 
@@ -8351,7 +8321,7 @@ with the following keys:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line679">line 679</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line690">line 690</a>
     </li></ul></dd>
     
 
@@ -8453,74 +8423,6 @@ with the following keys:</p>
         <h3 class="subsection-title"><a name="video-methods"></a>Video methods</h3>
 
         <dl>
-            
-<dt>
-    <h4 class="name" id="FPS"><span class="type-signature"></span>FPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Alias for <a href="#fps">FfmpegCommand#fps</a>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
             
 <dt>
     <h4 class="name" id="fps"><span class="type-signature"></span>fps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
@@ -8684,7 +8586,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="FPSOutput"><span class="type-signature"></span>FPSOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="FPS"><span class="type-signature"></span>FPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -8753,6 +8655,74 @@ with the following keys:</p>
             
 <dt>
     <h4 class="name" id="fpsOutput"><span class="type-signature"></span>fpsOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Alias for <a href="#fps">FfmpegCommand#fps</a>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="FPSOutput"><span class="type-signature"></span>FPSOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -9052,7 +9022,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="outputFps"><span class="type-signature"></span>outputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="outputFPS"><span class="type-signature"></span>outputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -9120,7 +9090,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="outputFPS"><span class="type-signature"></span>outputFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="outputFps"><span class="type-signature"></span>outputFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -9814,74 +9784,6 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="withFps"><span class="type-signature"></span>withFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Alias for <a href="#fps">FfmpegCommand#fps</a>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
     <h4 class="name" id="withFPS"><span class="type-signature"></span>withFPS<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
@@ -9950,7 +9852,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="withFpsOutput"><span class="type-signature"></span>withFpsOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withFps"><span class="type-signature"></span>withFps<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -10019,6 +9921,74 @@ with the following keys:</p>
             
 <dt>
     <h4 class="name" id="withFPSOutput"><span class="type-signature"></span>withFPSOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Alias for <a href="#fps">FfmpegCommand#fps</a>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="withFpsOutput"><span class="type-signature"></span>withFpsOutput<span class="signature">(fps)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -10770,7 +10740,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="applyAutopadding"><span class="type-signature"></span>applyAutopadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="applyAutoPadding"><span class="type-signature"></span>applyAutoPadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -10838,7 +10808,7 @@ with the following keys:</p>
         
             
 <dt>
-    <h4 class="name" id="applyAutoPadding"><span class="type-signature"></span>applyAutoPadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="applyAutopadding"><span class="type-signature"></span>applyAutopadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -11126,6 +11096,74 @@ with the following keys:</p>
         
             
 <dt>
+    <h4 class="name" id="autoPad"><span class="type-signature"></span>autoPad<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Alias for <a href="#autopad">FfmpegCommand#autopad</a>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="autopad"><span class="type-signature"></span>autopad<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
 
     
@@ -11325,74 +11363,6 @@ with the following keys:</p>
 		<li>autoPad</li>
 	
 </ul>
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="autoPad"><span class="type-signature"></span>autoPad<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Alias for <a href="#autopad">FfmpegCommand#autopad</a>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
 </dd>
@@ -12331,7 +12301,7 @@ ratio is the same.</p>
         
             
 <dt>
-    <h4 class="name" id="withAutopadding"><span class="type-signature"></span>withAutopadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withAutoPadding"><span class="type-signature"></span>withAutoPadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -12399,7 +12369,7 @@ ratio is the same.</p>
         
             
 <dt>
-    <h4 class="name" id="withAutoPadding"><span class="type-signature"></span>withAutoPadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withAutopadding"><span class="type-signature"></span>withAutopadding<span class="signature">(<span class="optional">pad</span>, <span class="optional">color</span>)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -12536,6 +12506,1004 @@ ratio is the same.</p>
     
 
     
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+<dt>
+    <h4 class="name" id="codecCallback"><span class="type-signature"></span>codecCallback<span class="signature">(err, codecs)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A callback passed to <a href="FfmpegCommand.html#availableCodecs">FfmpegCommand#availableCodecs</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>err</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>error object or null if no error happened</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>codecs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>codec object with codec names as keys and the following
+  properties for each codec (more properties may be available depending on the
+  ffmpeg version used):</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>codec description</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>canDecode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the codec is able to decode streams</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>canEncode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the codec is able to encode streams</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line289">line 289</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <h4 class="name" id="ffprobeCallback"><span class="type-signature"></span>ffprobeCallback<span class="signature">(err, ffprobeData)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A callback passed to the <a href="FfmpegCommand.html#ffprobe">FfmpegCommand#ffprobe</a> method.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>err</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>error object or null if no error happened</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ffprobeData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ffprobe output data; this object
+  has the same format as what the following command returns:</p>
+<pre><code>`ffprobe -print_format json -show_streams -show_format INPUTFILE`
+</code></pre>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>streams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>stream information</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>format information</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ffprobe.js.html">ffprobe.js</a>, <a href="ffprobe.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <h4 class="name" id="filterCallback"><span class="type-signature"></span>filterCallback<span class="signature">(err, filters)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A callback passed to <a href="FfmpegCommand.html#availableFilters">FfmpegCommand#availableFilters</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>err</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>error object or null if no error happened</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>filter object with filter names as keys and the following
+  properties for each filter:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>filter description</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input type, one of 'audio', 'video' and 'none'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>multipleInputs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the filter supports multiple inputs</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>output type, one of 'audio', 'video' and 'none'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>multipleOutputs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the filter supports multiple outputs</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <h4 class="name" id="formatCallback"><span class="type-signature"></span>formatCallback<span class="signature">(err, formats)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A callback passed to <a href="FfmpegCommand.html#availableFormats">FfmpegCommand#availableFormats</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>err</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>error object or null if no error happened</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>formats</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>format object with format names as keys and the following
+  properties for each format:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>format description</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>canDemux</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the format is able to demux streams from an input file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>canMux</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the format is able to mux streams into an output file</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="capabilities.js.html">capabilities.js</a>, <a href="capabilities.js.html#line387">line 387</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            </dl>
+    
 
     
         <h3 class="subsection-title">Events</h3>
@@ -12601,7 +13569,147 @@ ratio is the same.</p>
 
             
 
-            <td class="description last"><p>codec data object</p></td>
+            <td class="description last"><p>codec data object</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input format name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>audio</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input audio codec name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>audio_details</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input audio codec parameters</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>video</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input video codec name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>video_details</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>input video codec parameters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
         </tr>
 
     
@@ -12632,7 +13740,7 @@ ratio is the same.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line218">line 218</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line224">line 224</a>
     </li></ul></dd>
     
 
@@ -12768,7 +13876,7 @@ ratio is the same.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line234">line 234</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -12858,7 +13966,7 @@ ratio is the same.</p>
 
             
 
-            <td class="description last"><p>error</p></td>
+            <td class="description last"><p>error object</p></td>
         </tr>
 
     
@@ -12941,7 +14049,7 @@ ratio is the same.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line225">line 225</a>
+        <a href="processor.js.html">processor.js</a>, <a href="processor.js.html#line236">line 236</a>
     </li></ul></dd>
     
 
@@ -13031,7 +14139,222 @@ ratio is the same.</p>
 
             
 
-            <td class="description last"><p>progress object</p></td>
+            <td class="description last"><p>progress object</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>frames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>number of frames transcoded</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currentFps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>current processing speed in frames per second</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currentKbps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>current output generation speed in kilobytes per second</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>targetSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>current output file size</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timemark</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>current video timemark</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>percent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>processing progress (may not be available depending on input)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
         </tr>
 
     
@@ -13230,7 +14553,7 @@ ratio is the same.</p>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue May 13 2014 18:53:27 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Wed May 14 2014 07:31:18 GMT+0200 (CEST)
 </footer>
 
 <script> prettyPrint(); </script>
